@@ -1,0 +1,37 @@
+# PyPI name uses dashes not underscore because google IAM role doesnt allow underscore
+# Couldn't get it completely consistent though:
+#
+#     * PyPI name: google-ssl
+#     * Tool CLI command: google-ssl
+#     * Google IAM service account (doesnt allow underscore): google-ssl-rotator
+#     * Google Cloud function (accepts both underscore and dashes): google-ssl-rotator
+#
+# However, the package name is underscored because importing package requires it.
+#
+#     import google_ssl
+#
+[tool.poetry]
+name = "google-ssl"
+version = "0.1.0"
+description = "Google Cloud Function SSL Cert Rotator tool"
+authors = ["Tung Nguyen <tongueroo@gmail.com>"]
+readme = "README.md"
+homepage = "https://github.com/boltops-tools/google-ssl"
+packages = [{include = "google_ssl"}]
+license = "Apache-2.0"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+functions-framework = "^3"
+google-cloud-compute = "^1"
+google-cloud-storage = "^2"
+google-api-python-client = "^2" # for googleapiclient
+click = "^8"
+
+[tool.poetry.scripts]
+google-ssl = 'google_ssl.cli:cli'
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
