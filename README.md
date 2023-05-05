@@ -19,7 +19,7 @@ You'll upload cert files to the configured GCS bucket, and it'll use the cert fi
 * The Google Cloud Function is written in Python and uses purely the Google Cloud SDK. It does not use `gcloud`. This allows it to run on a Google Cloud Function.
 * The tool comes with the `google-ssl deploy` command to deploy the function to Google Cloud functions. It creates the necessary resources, like an IAM service account with required permissions. While the Google Cloud Function itself does not require gcloud, some parts of the deploy command do rely on the `gcloud` cli. Note: There was an attempt to use the pure Google Cloud SDK, but it proved unsatisfactory. The SDK does not document deployment well, and the interface was too complex at the time.
 * The tool also provides the ability to test locally. This helps speed up debugging, development, and testing.
-* The tool provides a message explaining what it will do with a "Are you sure?" prompt. To bypass the message and prompt, use the `-y' option.
+* The tool provides a message explaining what it will do with a "Are you sure?" prompt. To bypass the message and prompt, use the `-y` option.
 
 ## Structure
 
