@@ -47,6 +47,12 @@ This file should be a list of target https proxies separated by newlines. Here's
 
     gcloud compute target-https-proxies list --format json | jq -r '.[].name'
 
+## Install
+
+To install the google-ssl tool.
+
+    pip install google-ssl
+
 ## Development Setup
 
 For development, it is recommended to use Python virtualenv to set up the requirements. Here's a cheatsheet.
@@ -54,9 +60,9 @@ For development, it is recommended to use Python virtualenv to set up the requir
     virtualenv -p python3 .venv
     source .venv/bin/activate
 
-## Install
+## Dev Install
 
-Install the google-ssl tool.
+To install the google-ssl tool for development.
 
     pip install --editable .
 
